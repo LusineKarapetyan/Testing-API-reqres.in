@@ -1,0 +1,422 @@
+{
+  "info": {
+    "_postman_id": "82c1bd35-505a-4ff9-8d42-a113b644def6",
+    "name": "Test",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "List Users",
+      "_postman_id": "d1983fd9-86fa-4641-ae0d-d4e1431c55ff",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"peter@klaven\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "https://reqres.in/api/users?page=2",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "2",
+              "type": "default"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Single User",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "1de6a5bb-c5c8-4533-a9f5-f51ba98e4736",
+            "exec": [
+              "pm.test(\"Body matches string\", function(){\r",
+              "    pm.expect(pm.response.text()).to.include(\"Janet\");\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "ea315ce4-b39b-43a3-b8bf-5fea6285d59c",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://reqres.in/api/users/2"
+      },
+      "response": []
+    },
+    {
+      "name": "Single User Not Found",
+      "_postman_id": "228e1820-36a3-41d1-8835-ae360d13e7cc",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://reqres.in/api/users/23"
+      },
+      "response": []
+    },
+    {
+      "name": "List Resource",
+      "_postman_id": "b7c3698a-c4cd-4672-8c48-781767a56c94",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://reqres.in/api/unknown"
+      },
+      "response": []
+    },
+    {
+      "name": "Single Resource",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "0ccd0297-d421-4ec6-8d84-ce3216ae4cb4",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "d1124dbd-b6c9-48bb-9b21-2bb90157aabf",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://reqres.in/api/unknown/2"
+      },
+      "response": []
+    },
+    {
+      "name": "Single Resource Not Found",
+      "_postman_id": "79b7c8a0-c926-44c6-a37b-31acafa00e35",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://reqres.in/api/unknown/23"
+      },
+      "response": []
+    },
+    {
+      "name": "Create",
+      "_postman_id": "ea07e8a2-7fd8-431c-ab39-faf3d89952f7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"leader\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/users"
+      },
+      "response": []
+    },
+    {
+      "name": "Update",
+      "_postman_id": "f25f6653-c4ef-459d-8484-05a7ff1a8f99",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/users/2"
+      },
+      "response": []
+    },
+    {
+      "name": "Update",
+      "_postman_id": "fbac4e67-72c2-48ff-9e46-65bb7bd0ff60",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"morpheus\",\r\n    \"job\": \"zion resident\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/users/2"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "da79eab8-6524-4b87-ab4f-324a2eaf6ae6",
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "ede3741a-c018-4ea6-bf17-bd270aa872d7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "https://reqres.in/api/users/2"
+      },
+      "response": []
+    },
+    {
+      "name": "Register Successful",
+      "_postman_id": "dcb5a9f9-0ad5-4572-a654-21640d22d89e",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"pistol\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/register"
+      },
+      "response": []
+    },
+    {
+      "name": "Register Unsuccessful",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "5d898745-be68-4540-9a7b-3b2f2653725e",
+            "exec": [
+              "pm.test(\"response should be okay to process\", function(){\r",
+              "    pm.response.to.not.be.error;\r",
+              "}\r",
+              "\r",
+              ")"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "474ec1d4-7cd3-46df-b8b6-ddabef3572d7",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"sydney@fife\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/register"
+      },
+      "response": []
+    },
+    {
+      "name": "Login Successful",
+      "_postman_id": "f7581503-e683-4993-bbae-bd519d5c7011",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"eve.holt@reqres.in\",\r\n    \"password\": \"cityslicka\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/login"
+      },
+      "response": []
+    },
+    {
+      "name": "Login Unsuccessful",
+      "_postman_id": "a93dff1f-9cff-4f18-be2d-9b04293ab528",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\": \"peter@klaven\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://reqres.in/api/login"
+      },
+      "response": []
+    },
+    {
+      "name": "Delayed Response",
+      "_postman_id": "3181b719-b998-4c85-a3c3-58e98fc47e6a",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://reqres.in/api/users?delay=3",
+          "protocol": "https",
+          "host": [
+            "reqres",
+            "in"
+          ],
+          "path": [
+            "api",
+            "users"
+          ],
+          "query": [
+            {
+              "key": "delay",
+              "value": "3",
+              "type": "default"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Unable to find user",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "dc51c726-def1-4bb3-9cd2-0adf093dc7a9",
+            "exec": [
+              "pm.test(\"response must have body\", function(){\r",
+              "    pm.response.to.be.withBody;\r",
+              "}\r",
+              ")\r",
+              "\r",
+              "pm.test(\"response status to be ok\", function() {\r",
+              "    pm.response.to.be.ok;\r",
+              "})"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "_postman_id": "29c0dcdb-b34b-4d24-aa08-be8e7186a171",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://reqres.in/api/users/201"
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "ab89cbe7-83c1-4801-b25f-e1c8606d8d65",
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "bb4a0724-b63a-48ae-b8a9-c41185328f3a",
+        "type": "text/javascript",
+        "exec": [
+          "pm.test(\"Status code is 200 or 204\", function () {",
+          "    pm.expect(pm.response.code).to.be.oneOf([200,204])",
+          "});"
+        ]
+      }
+    }
+  ]
+}
