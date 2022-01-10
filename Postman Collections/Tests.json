@@ -460,7 +460,7 @@
     {
       "listen": "prerequest",
       "script": {
-        "id": "8f312e71-c984-464a-a0ec-27db205516e7",
+        "id": "a1431b67-d9a4-4f3b-9878-3ddc97f0eb8f",
         "type": "text/javascript",
         "exec": [
           "pm.request.headers.add({",
@@ -473,18 +473,13 @@
     {
       "listen": "test",
       "script": {
-        "id": "05947272-f222-49f8-b795-5a8e959228ad",
+        "id": "5c950988-7577-460b-a40e-de3ae600e807",
         "type": "text/javascript",
         "exec": [
           "pm.test(\"Status code is 200, 201 or 204\", function () {",
           "    pm.expect(pm.response.code).to.be.oneOf([200,201,204])",
           "});",
-          "",
-          "pm.test(\"response should be okay to process\", function () {",
-          "  pm.response.to.not.be.error;",
-          "  pm.response.to.have.jsonBody('');",
-          "  pm.response.to.not.have.jsonBody('error');",
-          "});"
+          ""
         ]
       }
     }
